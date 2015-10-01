@@ -29,3 +29,10 @@ see the demo for more detailed examples
 You can open the SLPopupViewControllerDemo demo project in Xcode and run it on your iPhone as well as in the Simulator.
 <br></br>
 <img src="https://raw.github.com/sunlight3d/SLPopupViewController/master/assets/pic2.png" width="283" height="500"/>
+##Collaboration
+
+Feel free to collaborate with ideas, issues and/or pull requests.
+
+##License
+
+SLPopupViewController is available under the Apache 2.0 license. See the LICENSE file for more info.
