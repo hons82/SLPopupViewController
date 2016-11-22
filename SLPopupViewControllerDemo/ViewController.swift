@@ -10,38 +10,65 @@ import UIKit
 
 class ViewController: UIViewController, MyPopupViewControllerDelegate {
     @IBAction func btnBottomTop(sender:UIButton) {
-       self.displayViewController(.BottomTop)
+       let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromBottom
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToTop
+       self.displayViewController(config)
     }
     @IBAction func btnTopBottom(sender:UIButton) {
-       self.displayViewController(.TopBottom)
+        let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromTop
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToBottom
+        self.displayViewController(config)
     }
     @IBAction func btnBottomBottom(sender:UIButton) {
-       self.displayViewController(.BottomBottom)
+        let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromBottom
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToBottom
+        self.displayViewController(config)
     }
     @IBAction func btnTopTop(sender:UIButton) {
-        self.displayViewController(.TopTop)
+        let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromTop
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToTop
+        self.displayViewController(config)
     }
     @IBAction func btnLeftLeft(sender:UIButton) {
-        self.displayViewController(.LeftLeft)
+        let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromLeft
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToLeft
+        self.displayViewController(config)
     }
     @IBAction func btnLeftRight(sender:UIButton) {
-        self.displayViewController(.LeftRight)
+        let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromLeft
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToRight
+        self.displayViewController(config)
+
     }
     @IBAction func btnRightLeft(sender:UIButton) {
-        self.displayViewController(.RightLeft)
+        let config = SLPopupViewControllerConfig()
+        config.showAnimation = SLPopupViewShowAnimation.SlideInFromRight
+        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToLeft
+        self.displayViewController(config)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    func displayViewController(animationType: SLpopupViewAnimationType) {
+    
+    func displayViewController(config: SLPopupViewControllerConfig?) {
         let myPopupViewController:MyPopupViewController = MyPopupViewController(nibName:"MyPopupViewController", bundle: nil)
         myPopupViewController.delegate = self
-        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in
-            
-        })
+        if let _ = config {
+            presentPopupViewController(myPopupViewController, config: config!)
+        } else {
+            presentPopupViewController(myPopupViewController, config: SLPopupViewControllerConfig())
+        }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,11 +77,12 @@ class ViewController: UIViewController, MyPopupViewControllerDelegate {
     //MARK: MyPopupViewControllerProtocol
     func pressOK(sender: MyPopupViewController) {
         print("press OK", terminator: "\n")
-        self.dismissPopupViewController(.Fade)
+        self.dismissPopupViewController()
     }
+    
     func pressCancel(sender: MyPopupViewController) {
         print("press Cancel", terminator: "\n")
-        self.dismissPopupViewController(.Fade)
+        self.dismissPopupViewController()
     }
 
 }

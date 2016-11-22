@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA043D141BA588FF00B1EE2F /* MyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA043D121BA588FF00B1EE2F /* MyPopupViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		FA043D151BA588FF00B1EE2F /* MyPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA043D131BA588FF00B1EE2F /* MyPopupViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		993BE6E41BE2059F005900CD /* SLPopupViewControllerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993BE6E31BE2059F005900CD /* SLPopupViewControllerConfig.swift */; };
+		99B29CA21BE113F10043B3FE /* MyPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B29CA01BE113F10043B3FE /* MyPopupViewController.xib */; };
+		FA043D141BA588FF00B1EE2F /* MyPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA043D121BA588FF00B1EE2F /* MyPopupViewController.swift */; };
+		FA043D151BA588FF00B1EE2F /* MyPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA043D131BA588FF00B1EE2F /* MyPopupViewController.xib */; };
 		FAE40E2F1BA587D90026FE00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE40E2E1BA587D90026FE00 /* AppDelegate.swift */; };
 		FAE40E311BA587D90026FE00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE40E301BA587D90026FE00 /* ViewController.swift */; };
 		FAE40E341BA587D90026FE00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE40E321BA587D90026FE00 /* Main.storyboard */; };
@@ -16,7 +18,7 @@
 		FAE40E391BA587D90026FE00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE40E371BA587D90026FE00 /* LaunchScreen.storyboard */; };
 		FAE40E441BA587D90026FE00 /* SLPopupViewControllerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE40E431BA587D90026FE00 /* SLPopupViewControllerDemoTests.swift */; };
 		FAE40E4F1BA587D90026FE00 /* SLPopupViewControllerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE40E4E1BA587D90026FE00 /* SLPopupViewControllerDemoUITests.swift */; };
-		FAE40E5E1BA588100026FE00 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE40E5D1BA588100026FE00 /* UIVViewController-SLPopup.swift */; settings = {ASSET_TAGS = (); }; };
+		FAE40E5E1BA588100026FE00 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE40E5D1BA588100026FE00 /* UIVViewController-SLPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		993BE6E31BE2059F005900CD /* SLPopupViewControllerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLPopupViewControllerConfig.swift; sourceTree = "<group>"; };
+		99B29C9F1BE113F10043B3FE /* MyPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPopupViewController.swift; sourceTree = "<group>"; };
+		99B29CA01BE113F10043B3FE /* MyPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPopupViewController.xib; sourceTree = "<group>"; };
 		FA043D121BA588FF00B1EE2F /* MyPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPopupViewController.swift; sourceTree = "<group>"; };
 		FA043D131BA588FF00B1EE2F /* MyPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPopupViewController.xib; sourceTree = "<group>"; };
 		FAE40E2B1BA587D90026FE00 /* SLPopupViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLPopupViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +152,7 @@
 			children = (
 				FAE40E5F1BA588400026FE00 /* MyPopupViewController */,
 				FAE40E5D1BA588100026FE00 /* UIVViewController-SLPopup.swift */,
+				993BE6E31BE2059F005900CD /* SLPopupViewControllerConfig.swift */,
 			);
 			path = SLPopupViewController;
 			sourceTree = SOURCE_ROOT;
@@ -154,6 +160,8 @@
 		FAE40E5F1BA588400026FE00 /* MyPopupViewController */ = {
 			isa = PBXGroup;
 			children = (
+				99B29C9F1BE113F10043B3FE /* MyPopupViewController.swift */,
+				99B29CA01BE113F10043B3FE /* MyPopupViewController.xib */,
 			);
 			name = MyPopupViewController;
 			path = SLPopupViewControllerDemo/MyPopupViewController;
@@ -265,6 +273,7 @@
 				FAE40E391BA587D90026FE00 /* LaunchScreen.storyboard in Resources */,
 				FAE40E361BA587D90026FE00 /* Assets.xcassets in Resources */,
 				FAE40E341BA587D90026FE00 /* Main.storyboard in Resources */,
+				99B29CA21BE113F10043B3FE /* MyPopupViewController.xib in Resources */,
 				FA043D151BA588FF00B1EE2F /* MyPopupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993BE6E41BE2059F005900CD /* SLPopupViewControllerConfig.swift in Sources */,
 				FAE40E5E1BA588100026FE00 /* UIVViewController-SLPopup.swift in Sources */,
 				FAE40E311BA587D90026FE00 /* ViewController.swift in Sources */,
 				FAE40E2F1BA587D90026FE00 /* AppDelegate.swift in Sources */,

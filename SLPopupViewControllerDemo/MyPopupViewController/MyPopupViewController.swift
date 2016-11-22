@@ -13,7 +13,9 @@ protocol MyPopupViewControllerDelegate {
     func pressCancel(sender: MyPopupViewController)
 }
 class MyPopupViewController: UIViewController {
+    
     var delegate:MyPopupViewControllerDelegate?
+    
     @IBAction func btnOK(sender:UIButton) {
         self.delegate?.pressOK(self)
     }
@@ -24,8 +26,6 @@ class MyPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.cornerRadius = 22
-        self.view.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -34,9 +34,6 @@ class MyPopupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-
     /*
     // MARK: - Navigation
 
