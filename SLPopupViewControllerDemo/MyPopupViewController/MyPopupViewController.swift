@@ -17,11 +17,11 @@ class MyPopupViewController: UIViewController {
     var delegate:MyPopupViewControllerDelegate?
     
     @IBAction func btnOK(sender:UIButton) {
-        self.delegate?.pressOK(self)
+        self.delegate?.pressOK(sender: self)
     }
     
     @IBAction func btnCancel(sender:UIButton) {
-        self.delegate?.pressCancel(self)
+        self.delegate?.pressCancel(sender: self)
     }
     
     override func viewDidLoad() {

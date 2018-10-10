@@ -73,7 +73,7 @@ open class SLPopupViewControllerConfig {
     /// - containerView: Enclosing a popup view. Added to the view of UIViewController.
     /// - popupView: A popup view is displayed.
     /// - completion: Be sure to call after animation completion.
-    open var showCustomAnimation: (UIView, UIView, (Void) -> Void) -> Void = { containerView, popupView, completion in }
+    open var showCustomAnimation: (UIView, UIView, () -> Void) -> Void = { containerView, popupView, completion in }
     
     /// Dismiss custom animation of closure.
     ///
@@ -84,7 +84,7 @@ open class SLPopupViewControllerConfig {
     /// - containerView: Enclosing a popup view. Added to the view of UIViewController.
     /// - popupView: A popup view is displayed.
     /// - completion: Be sure to call after animation completion.
-    open var dismissCustomAnimation: (UIView, UIView, (Void) -> Void) -> Void = { containerView, popupView, completion in }
+    open var dismissCustomAnimation: (UIView, UIView, () -> Void) -> Void = { containerView, popupView, completion in }
     
     public init() {}
 }

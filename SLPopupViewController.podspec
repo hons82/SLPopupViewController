@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = "SLPopupViewController"
-  s.version        = "1.0.0"
+  s.version        = "1.1.0"
   s.summary        = "This library is used for showing popupViewController."
   s.description    = <<-DESC
 This library is used for showing popupViewController. Compatible with swift 2.0, iOS 9
@@ -10,6 +10,7 @@ SLPopupViewController A UIViewController Category to display a ViewController as
   s.license        = { :type => "Apache 2.0", :file => "LICENSE.md" }
   s.author         = { "Nguyen Duc Hoang" => "sunlight3d@icloud.com" }
   s.platform       = :ios, "8.0"
+  s.swift_version  = '4.2'
   s.source         = { :git => "https://github.com/sunlight3d/SLPopupViewController.git", :tag => "#{s.version}" }
   s.source_files   = "SLPopupViewController/*.swift"
   s.framework      = "QuartzCore"

@@ -11,46 +11,46 @@ import UIKit
 class ViewController: UIViewController, MyPopupViewControllerDelegate {
     @IBAction func btnBottomTop(sender:UIButton) {
        let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromBottom
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToTop
-       self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromBottom
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToTop
+        self.displayViewController(config: config)
     }
     @IBAction func btnTopBottom(sender:UIButton) {
         let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromTop
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToBottom
-        self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromTop
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToBottom
+        self.displayViewController(config: config)
     }
     @IBAction func btnBottomBottom(sender:UIButton) {
         let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromBottom
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToBottom
-        self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromBottom
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToBottom
+        self.displayViewController(config: config)
     }
     @IBAction func btnTopTop(sender:UIButton) {
         let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromTop
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToTop
-        self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromTop
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToTop
+        self.displayViewController(config: config)
     }
     @IBAction func btnLeftLeft(sender:UIButton) {
         let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromLeft
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToLeft
-        self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromLeft
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToLeft
+        self.displayViewController(config: config)
     }
     @IBAction func btnLeftRight(sender:UIButton) {
         let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromLeft
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToRight
-        self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromLeft
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToRight
+        self.displayViewController(config: config)
 
     }
     @IBAction func btnRightLeft(sender:UIButton) {
         let config = SLPopupViewControllerConfig()
-        config.showAnimation = SLPopupViewShowAnimation.SlideInFromRight
-        config.dismissAnimation = SLPopupViewDismissAnimation.SlideOutToLeft
-        self.displayViewController(config)
+        config.showAnimation = SLPopupViewShowAnimation.slideInFromRight
+        config.dismissAnimation = SLPopupViewDismissAnimation.slideOutToLeft
+        self.displayViewController(config: config)
 
     }
     

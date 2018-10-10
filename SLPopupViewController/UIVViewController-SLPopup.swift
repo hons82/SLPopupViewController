@@ -151,7 +151,8 @@ extension UIViewController {
     // MARK: Slide
     
     fileprivate func slideViewIn() {
-        if let sourceSize: CGSize = self.getTopView().bounds.size, let popupSize: CGSize = self.popupViewController?.view.bounds.size {
+        if let popupSize: CGSize = self.popupViewController?.view.bounds.size {
+            let sourceSize: CGSize = self.getTopView().bounds.size
             var popupStartRect:CGRect
             if let config = config {
                 switch (config.showAnimation) {
@@ -172,16 +173,17 @@ extension UIViewController {
                     self.popupViewController?.viewWillAppear(false)
                     self.overlayView?.alpha = 0.5
                     self.popupViewController?.view.frame = popupEndRect
-                    }, completion: { (finished) -> Void in
-                        self.popupViewController?.viewDidAppear(false)
-                        self.completionShowAnimation(true)
+                }, completion: { (finished) -> Void in
+                    self.popupViewController?.viewDidAppear(false)
+                    self.completionShowAnimation(true)
                 }) 
             }
         }
     }
     
     fileprivate func slideViewOut() {
-        if let sourceSize: CGSize = self.getTopView().bounds.size, let popupView: UIView = self.popupViewController?.view {
+        if let popupView: UIView = self.popupViewController?.view {
+            let sourceSize: CGSize = self.getTopView().bounds.size
             var popupEndRect:CGRect
             if let config = config {
                 switch (config.dismissAnimation) {
@@ -195,16 +197,16 @@ extension UIViewController {
                     popupEndRect = CGRect(x: -popupView.bounds.size.width, y: popupView.frame.origin.y, width: popupView.bounds.size.width, height: popupView.bounds.size.height)
                 }
                 
-                UIView.animate(withDuration: config.dismissAnimationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+                UIView.animate(withDuration: config.dismissAnimationDuration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: { () -> Void in
                     self.popupViewController?.viewWillDisappear(false)
                     self.overlayView!.alpha = 0.0
                     popupView.frame = popupEndRect
-                    }) { (finished) -> Void in
-                        self.completionDismissAnimation(true)
-                        popupView.removeFromSuperview()
-                        self.overlayView?.removeFromSuperview()
-                        self.popupViewController?.viewDidDisappear(false)
-                        self.popupViewController = nil
+                }) { (finished) -> Void in
+                    self.completionDismissAnimation(true)
+                    popupView.removeFromSuperview()
+                    self.overlayView?.removeFromSuperview()
+                    self.popupViewController?.viewDidDisappear(false)
+                    self.popupViewController = nil
                 }
             }
         }
@@ -213,20 +215,21 @@ extension UIViewController {
     // MARK: Fade
     
     fileprivate func fadeViewIn() {
-        if let sourceSize: CGSize = self.getTopView().bounds.size, let popupView: UIView = self.popupViewController?.view, let config = config {
+        if let popupView: UIView = self.popupViewController?.view, let config = config {
+            let sourceSize: CGSize = self.getTopView().bounds.size
             popupView.frame = CGRect(x: (sourceSize.width - popupView.bounds.size.width)/2,
-                y: (sourceSize.height - popupView.bounds.size.height)/2,
-                width: popupView.bounds.size.width,
-                height: popupView.bounds.size.height)
+                                     y: (sourceSize.height - popupView.bounds.size.height)/2,
+                                     width: popupView.bounds.size.width,
+                                     height: popupView.bounds.size.height)
             popupView.alpha = 0.0
             
             UIView.animate(withDuration: config.showAnimationDuration, animations: { () -> Void in
                 self.popupViewController!.viewWillAppear(false)
                 self.overlayView?.alpha = 0.5
                 popupView.alpha = 1.0
-                }, completion: { (finished) -> Void in
-                    self.popupViewController?.viewDidAppear(false)
-                    self.completionShowAnimation(true)
+            }, completion: { (finished) -> Void in
+                self.popupViewController?.viewDidAppear(false)
+                self.completionShowAnimation(true)
             }) 
         }
     }
@@ -237,19 +240,19 @@ extension UIViewController {
                 self.popupViewController?.viewWillDisappear(false)
                 self.overlayView?.alpha = 0.0
                 popupView.alpha = 0.0
-                }, completion: { (finished) -> Void in
-                    self.completionDismissAnimation(true)
-                    popupView.removeFromSuperview()
-                    self.overlayView?.removeFromSuperview()
-                    self.popupViewController?.viewDidDisappear(false)
-                    self.popupViewController = nil
+            }, completion: { (finished) -> Void in
+                self.completionDismissAnimation(true)
+                popupView.removeFromSuperview()
+                self.overlayView?.removeFromSuperview()
+                self.popupViewController?.viewDidDisappear(false)
+                self.popupViewController = nil
             }) 
         }
     }
     
     // MARK: - Button callback
     
-    func btnDismissViewControllerWithAnimation(_ btnDismiss : UIButton) {
+    @objc func btnDismissViewControllerWithAnimation(_ btnDismiss : UIButton) {
         dismissPopupViewController()
     }
     
